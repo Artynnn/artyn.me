@@ -1,0 +1,123 @@
+/* layout */
+
+/* offset the article */
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    /* max-width: 1400px; */
+    padding-left: 12.5%;
+    width: 87.5%;
+}
+
+/* typography */
+
+body {
+    font-family: Palatino, serif;
+}
+
+p.meta {
+    /* we want meta information smaller then body text */
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.title {
+    /* make it the biggest element on screen */
+    font-size: 3.2rem;
+
+    /* reducing weight. Makes it slightly more legible */
+    font-weight: 400;
+    line-height: 1;
+
+    /* keep it separate and visually distinct */
+    margin-bottom: 1.5rem;
+    margin-top: 4rem;
+}
+
+/* body text */
+
+p {
+    margin-bottom: 1.4rem;
+    margin-top: 1.4rem;
+    padding-right: 0;
+    vertical-align: baseline;
+}
+
+/* line length */
+
+p, ul, li {
+    width: 66ch;
+}
+
+p, ul, li {
+    margin-bottom: 1.4rem;
+    margin-top: 1.4rem;
+    padding-right: 0;
+    vertical-align: baseline;
+}
+/* decorative */
+ul > li {
+    list-style: "✴ ";
+}
+
+
+@media (prefers-color-scheme: light) {
+    h1, h2, h3 {
+	/* very striking */
+	color: blue;
+    }
+
+    body {
+	background-color: white;
+	color: black;
+    }
+    a {
+	color: black;
+    }
+
+    a:hover {
+	color: black; 
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    h1, h2, h3 {
+	/* very striking */
+	color: red;
+    }
+
+    body {
+	background-color: black;
+	color: white;
+    }
+
+    a {
+	color: white;
+    }
+
+    a:hover {
+	color: white; 
+    }
+}
+
+.inline-favicon {
+    width: 20px;
+    display: inline-block;
+    margin: 0 3px -3px 3px;
+}
+
+
+/* better for pictographic */
+/* .home a:link { text-decoration: none; font-size: 1.75em} */
+
+.home a:link { text-decoration: none; font-size: 1.6em}
+
+.home a:visited { text-decoration: none; }
+
+.home a:hover { text-decoration: none; }
+
+.home a:active { text-decoration: none; }
+

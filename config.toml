@@ -1,0 +1,13 @@
+baseURL = "https://artyn.me/"
+languageCode = "en-us"
+title = "Artyn's personal website"
+
+[Params]
+   homeText = "Artyn's personal website."
+
+# Add HTML to content files
+[markup.goldmark.renderer]
+   unsafe= true
+
+# We don't need 
+disableKinds = ["section", "taxonomyTerm"]
