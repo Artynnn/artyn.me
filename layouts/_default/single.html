@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<article>
+  <section>
+    <div class="home"><a href="/">⌂ home</a></div>
+    <h1>{{ .Title }}</h1>
+        <div class="meta">
+      <p class="author">
+	Written by: {{ .Site.Params.author }}.
+      </p>
+      <p class="posted">
+	Posted on:
+	{{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }} of {{ .Date.Format "January 2006" }}.
+      </p>
+    </div>
+    {{ .Content }}
+    </section>
+</article>
+
+{{ end }}

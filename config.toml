@@ -1,0 +1,30 @@
+baseURL = "https://artyn.me/"
+languageCode = "en-us"
+title = "Artyn's personal website"
+
+[Params]
+   homeText = "Artyn's personal website."
+   Author = "Artyn"
+
+[Permalinks]
+  # https://gohugo.io/content-management/urls/#permalink-configuration-values
+  # | :year        | the 4-digit year                           |
+  # | :month       | the 2-digit month                          |
+  # | :monthname   | the name of the month                      |
+  # | :day         | the 2-digit day                            |
+  # | :weekday     | the 1-digit day of the week (Sunday = 0)   |
+  # | :weekdayname | the name of the day of the week            |
+  # | :yearday     | the 1- to 3-digit day of the year          |
+  # | :section     | the content's section                      |
+  # | :sections    | the content's sections hierarchy           |
+  # | :title       | the content's title                        |
+  # | :slug        | the content's slug (or title, if no slug)  |
+  # | :filename    | the content's filename (without extension) |
+  "/" = "/:title/"
+
+# This allows you to add HTML to content files
+[markup.goldmark.renderer]
+   unsafe= true
+
+# We don't need tags or sections.
+disableKinds = ["section", "taxonomyTerm"]

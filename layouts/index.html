@@ -1,0 +1,42 @@
+{{ define "main" }}
+    <section>
+	<div class="h-card">
+	    <p>
+	    <a class="p-name u-url" href="https://artyn.me" rel="me">Artyn<a/>
+		is a CS student somewhere in America.
+	    </p>
+	</div>
+	<ul>
+	    <li>
+		Email:
+		<a href="mailto:info@artyn.me" rel="me">info@artyn.me</a>
+	    </li>
+	    <li>
+		Mastodon:
+		<a href="https://fosstodon.org/@artyn" rel="me">@artyn@fosstodon.org</a>
+	    </li>
+	    <li>
+		IRC: <code>artyn</code> on <a href="https://libera.chat/" rel="me">libera.chat</a>
+	    </li>
+	    <li>
+		Lemmy:
+		<a href="https://lemmy.ml/u/Artyn" rel="me">@artyn@lemmy.ml</a>
+	    </li>
+	    <li>
+		Sourcehut:
+		<a href="https://sr.ht/~artyn/" rel="me">artyn</a>
+	    </li>
+	    <li>List of Articles (<a href="https://artyn.me/index.xml">RSS</a>):
+		<ul>
+		    {{ range .Pages.ByPublishDate.Reverse }}
+			<li class="h-entry">
+			    <a href="{{ .RelPermalink }}" class="p-name">{{ .Title }}</a>
+			    ({{ .Page.WordCount }} words, last updated <span class="dt-updated">{{ .Page.Lastmod.Format "January 2006" }})</span>
+			    {{ with .Page.Description }} <p class="p-summary">{{ . }}</p> {{ end }}
+			</li>
+		    {{ end }}
+		</ul>
+	    </li>
+	</ul>
+    </section>
+{{ end }}
