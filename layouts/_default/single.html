@@ -20,7 +20,7 @@
 	  <p>Last updated
 	    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
 	    {{ $dateHuman := .Date | time.Format ":date_long" }}
-	    <time class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+	    <span class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</span>
 	  </p>
         </div>
         <div class="toc">
