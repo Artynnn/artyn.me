@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel=icon href=/output.png />
+    <title>{{ .Title | safeHTML }}</title>
+    {{ $styles := resources.Get "vanilla.css" | minify }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  </head>
+  <body>
+    <p>My personal blog that I rarely update. Follow by <a href="https://blog.artyn.me/index.xml">RSS</a>.</p>
+    <div class="subjects">
+      <div class="topic">
+        <ul>
+          <ul>
+            {{ range ( .Site.RegularPages | first 3) }}
+              <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .WordCount }} words)
+                {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+	        {{ $dateHuman := .Date | time.Format ":date_long" }}
+	        <span class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</span>
+              </li>
+            {{ end }}
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

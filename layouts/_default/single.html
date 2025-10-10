@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ .Title | safeHTML }}</title>
+    {{ $styles := resources.Get "vanilla.css" | minify }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  </head>
+  <body>
+    <article class="h-entry">
+      <div id="content">
+        <h1 class="p-name">{{ .Title }}</h1>
+        <div class="article-metadata">
+	  <p>
+	    By
+	    <a class="p-author h-card" href="/">
+	      {{ .Site.Params.author.name }}
+	    </a>
+	  </p>
+	  <p>Last updated
+	    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+	    {{ $dateHuman := .Date | time.Format ":date_long" }}
+	    <time class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+	  </p>
+        </div>
+        <div class="toc">
+          {{ .TableOfContents }}
+        </div>
+        <div class="e-content">
+	  {{ .Content }}
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

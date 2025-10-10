@@ -1,0 +1,31 @@
+baseURL = "https://artyn.me"
+languageCode = "en-us"
+title = "Artyn's blog"
+# I love seeing the file extension
+uglyURLs = true
+# I don't need any metadata features
+disableKinds = ["taxonomy", "term"]
+
+[params]
+[params.author]
+email = "info@artyn.me"
+name = "Artyn Karadak"
+
+[markup.goldmark.renderer]
+# Allows HTML directly into post
+unsafe = true
+
+# Get rid of all syntax highlighting
+[markup.highlight]
+anchorLineNos = false
+codeFences = false
+guessSyntax = false
+hl_Lines = ""
+lineAnchors = ""
+lineNoStart = ""
+lineNos = false
+lineNumbersInTable = false
+noClasses = false
+style = ""
+tabWidth = ""
+
