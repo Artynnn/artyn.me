@@ -1,187 +1,150 @@
-/* Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+/* # Fonts */
+
+/* atkinson-hyperlegible-next-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Atkinson Hyperlegible Next';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/atkinson-hyperlegible-next-v7-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-* {
-    box-sizing: border-box;
+/* atkinson-hyperlegible-next-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Atkinson Hyperlegible Next';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/atkinson-hyperlegible-next-v7-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-/* Variables */
+/* atkinson-hyperlegible-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Atkinson Hyperlegible Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/atkinson-hyperlegible-mono-v8-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* # Presentation */
+
 :root {
-    --desktop-font-size: 1.2rem/1.55;
-    --mobile-font-size: 1rem/1.45;
-    --text-color: #2d2d2d;
-    --link-color: blue;
-    --link-color-alt: darkblue;
-    --primary-color: lightsteelblue;
-    --secondary-color: aliceblue;
-    --tertiary-color: whitesmoke;
+    --pagefind-ui-font: 'Atkinson Hyperlegible Next';
+    --pagefind-ui-border-width: 0px;
+    --main-bg-color: #aabaff;
+    --main-fg-color: black;
+    --pagefind-ui-text: var(--main-fg-color);
+    --pagefind-ui-background: var(--main-bg-color);
 }
 
-/* Typography */
 body {
-    color: var(--text-color);
-    margin: 0 auto;
-    max-width: 75ch;
-    padding: 0 0.5rem;
-}
-body, input {
-    font: var(--desktop-font-size) -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto, Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'Atkinson Hyperlegible Next', sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--main-fg-color);
 }
 
-h1,h2,h3,h4,h5,h6,p,blockquote,dl,img,figure {
-    margin: 2rem 0;
+h1 {
+    font-size: 2.027rem;
 }
 
-h1,h2,h3,h4,h5,h6 { font-weight: bold; line-height: 1.2; }
-h1 { font-size: 200%; }
-h2 { font-size: 150%; }
-h3 { font-size: 120%; }
-h4,h5,h6 { font-size: 100%; }
-h5, h6 { text-transform: uppercase; }
-
-header h1 { border-bottom: 1px solid; }
-
-a,a:visited { color: var(--link-color); }
-a:hover,a:focus { color: var(--link-color-alt); }
-
-strong, time, b { font-weight: bold; }
-em, dfn, i { font-style: italic; }
-sub { font-size: 60%; vertical-align: bottom; }
-small { font-size: 80%; }
-
-blockquote, q {
-    background: var(--secondary-color);
-    border-left: 10px solid var(--primary-color);
-    display: block;
-    font-family: "Georgia", serif;
-    padding: 1rem;
-}
-blockquote p:first-child { margin-top: 0; }
-blockquote p:last-child { margin-bottom: 0; }
-cite {
-    font-family: "Georgia", serif;
-    font-style: italic;
-    font-weight: bold;
-    margin-top: 1rem;
+h2 {
+    font-size: 1.802rem;
 }
 
-kbd,code,samp,pre,var { font: var(--mobile-font-size) monospace; }
-code, pre {
-    background: var(--tertiary-color);
-    border: 1px solid;
-    overflow: auto;
-    padding: 0.25rem 0.5rem;
-}
-code pre , pre code { border: 0; padding: 0; }
-
-/* Elements */
-hr {
-    background: var(--text-color);
-    border: 0;
-    height: 1px;
-    margin: 4rem 0;
+h3 {
+    font-size: 1.602rem;
 }
 
-img {
-    display: block;
-    height: auto; 
-    max-width: 100%; 
+h4 {
+    font-size: 1.424rem;
 }
 
-figure {
-    border: 1px solid var(--primary-color);
-    display: inline-block;
-    padding: 1rem;
-    width: 100%;
+h5 {
+    font-size: 1.266rem;
 }
-figure img { margin: 0 auto; }
-figure figcaption { font-size: 80%; margin-top: 0.5rem; text-align: center; }
 
-ul, ol { margin: 2rem 0; padding: 0 0 0 2rem; }
-ul li, ol li { margin-bottom: 1rem; }
-li > ul, li > ol { margin: 0.25rem 0 0.5rem; padding: 0 0 0 2rem; }
-li > ul li, li > ol li { margin-bottom: 0.5rem; }
+a:link, a:visited, a:hover, a:active {
+  color: var(--main-fg-color);
+  text-decoration: underline;
+}
 
-dl dd { padding-left: 2rem; }
+/* Get rid of the list looks on the index page. Looks bad. */
+.topic > ul {
+  padding: 0;
+  list-style: none;
+}
 
 table {
-    border: 1px solid var(--primary-color);
-    border-collapse: collapse;
-    table-layout: fixed;
-    text-align: left;
-    width: 100%;
-}
-table caption { margin: 2rem 0; }
-table tr { border-bottom: 1px solid var(--primary-color); }
-table thead { position: sticky; top: 0; }
-table tbody tr:nth-child(even) { background: var(--tertiary-color); }
-table th { background: var(--secondary-color); font-weight: bold; }
-table th, table td { padding: 0.5rem; }
-
-input { 
-    appearance: none; 
-    border: 1px solid var(--text-color);
-    display: block;
-    margin: 0.5rem 0;
-    padding: 0.8rem; 
-}
-input:focus, input:active { background-color: var(--secondary-color); border-color: var(--link-color); }
-
-sup { font-size: 80%; vertical-align: top; }
-
-/* Mobile Styling */
-@media screen and (max-width: 75ch) {
-    body, input {
-        font: var(--mobile-font-size) -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto, Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
-    }
-    table { table-layout: auto; }
+  border-collapse: collapse;
 }
 
-/* Dark mode support */
+td, th {
+  border: 1px solid var(--main-fg-color);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* For very large tables */
+.scrollable {
+    overflow-x: auto;
+}
+
+/* Capping the size of code */
+pre {
+    overflow-x: auto;
+}
+
+/* Capping the size of images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+pre, code {
+    font-family: 'Atkinson Hyperlegible Mono', monospace;
+}
+
+article, figure {
+    max-width: 65ch;
+    line-height: 1.4;
+}
+
+figcaption > h4 {
+    font-weight: normal;
+    font-size: 1em;
+}
+
+/* # Dark Mode */
+
 @media (prefers-color-scheme: dark) {
-    body {
-        background: #191919;
-    }
-    input:focus, input:active {
-        background-color: var(--text-color);
-        color: var(--secondary-color);
-    }
-    table,
-    table tr,
-    table th:not(:last-of-type),
-    table td:not(:last-of-type) {
-        border-color: var(--text-color);
-    }
-    table thead th,
-    table tfoot th {
-        background-color: var(--primary-color-light);
-    }
     :root {
-        --text-color: #fff;
-        --link-color: orange;
-        --link-color-alt: yellow;
-        --primary-color: orange;
-        --primary-color-light: dimgrey;
-        --secondary-color: black;
-        --tertiary-color: #2d2d2d;
+        --main-bg-color: black;
+        --main-fg-color: #aabaff;
+    }
+}
+
+/* # Mobile First */
+
+aside {
+     float: none;
+     margin-left: 40px;
+}
+
+/* # Desktop Layout */
+
+@media (min-width: 63em) {
+    .home, article {
+        padding-left: 12.5%;
+    }
+    aside {
+        float: right;
+        margin-right: -52%;
+        width: 50%;
+    }
+    figcaption {
+        float: right;
+        margin-right: -60%;
+        width: 50%;
     }
 }

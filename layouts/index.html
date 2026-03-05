@@ -7,23 +7,35 @@
     {{ $styles := resources.Get "vanilla.css" | minify }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
   </head>
-  <body>
-    <p>My personal blog that I rarely update. Follow by <a href="https://artyn.me/index.xml">RSS</a>.</p>
+  <body class="home">
+    <p>My personal blog that I rarely update. <a href="/search.html">Search</a> for content and follow via <a href="/index.xml">RSS</a>.</p>
     <div class="subjects">
       <div class="topic">
+        <h3>Latest</h3>
         <ul>
-          <ul>
-            {{ range ( .Site.RegularPages | first 3) }}
-              <li>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .WordCount }} words)
-                {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-	        {{ $dateHuman := .Date | time.Format ":date_long" }}
-	        <span class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</span>
-              </li>
-            {{ end }}
-          </ul>
+          {{ range ( .Site.RegularPages | first 3) }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .WordCount }} words)
+            {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+	    {{ $dateHuman := .Date | time.Format ":date_long" }}
+	    <span class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</span>
+          </li>
+          {{ end }}
         </ul>
       </div>
+      {{ range where .Site.RegularPages "Params.topic" "!=" nil }}
+      <div class="topic">
+        <h3>{{ .Params.topic }}</h3>
+        <ul>
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .WordCount }} words)
+            {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+	    {{ $dateHuman := .Date | time.Format ":date_long" }}
+	    <span class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</span>
+          </li>
+        </ul>
+      </div>
+      {{ end }}
     </div>
   </body>
 </html>

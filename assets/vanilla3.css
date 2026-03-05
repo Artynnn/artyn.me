@@ -1,0 +1,45 @@
+article {
+    display: grid;
+    grid-template-columns: [left-margin] 2.5fr [body-text] 7fr [right-margin] 5fr;
+}
+
+/* capping the size of images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* subgrids */
+
+figure {
+    display: grid;
+    grid-template-columns: [image] 3fr [gap] 0.5fr [caption] 4fr;
+}
+
+img {
+    grid-column: image;
+}
+
+figcaption {
+    grid-column: caption;
+}
+
+#TableOfContents {
+    display: grid;
+    grid-template-columns: [original-toc] 3fr [gap] 0.5fr [toc] 4fr;
+}
+
+#TableOfContents > ul {
+    grid-column: toc;
+    padding: 0;
+    list-style: none;
+}
+
+aside {
+    display: grid;
+    grid-template-columns: [original-toc] 3fr [gap] 0.5fr [toc] 4fr;
+} 
+
+aside > p {
+    grid-column: toc;
+}

@@ -8,8 +8,7 @@
   </head>
   <body>
     <article class="h-entry">
-      <div id="content">
-        <h1 class="p-name">{{ .Title }}</h1>
+        <h1 data-pagefind-meta="title" class="p-name">{{ .Title }}</h1>
         <div class="article-metadata">
 	  <p>
 	    By
@@ -23,13 +22,13 @@
 	    <span class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</span>
 	  </p>
         </div>
-        <div class="toc">
-          {{ .TableOfContents }}
-        </div>
-        <div class="e-content">
+        {{ if .Params.long }}
+        {{ .TableOfContents }}
+        {{ end }}
+        <div data-pagefind-body class="e-content">
 	  {{ .Content }}
         </div>
-      </div>
+
     </article>
   </body>
 </html>

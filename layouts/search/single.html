@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    {{ $styles := resources.Get "vanilla.css" | minify }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+    <title>{{ .Title }}</title>
+  </head>
+  <body>
+    <script src="/pagefind/pagefind-ui.js"></script>
+    <div id="search"></div>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({ element: "#search", showSubResults: true });
+      });
+    </script>
+
+    <noscript>Pagefind needs Javascript for searching to work.</noscript> 
+    
+  </body>
+</html>

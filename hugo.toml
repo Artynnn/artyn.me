@@ -1,9 +1,10 @@
 baseURL = "https://artyn.me"
 languageCode = "en-us"
 title = "Artyn's blog"
-# I love seeing the file extension
+# I love seeing the file extension.
+# I want people to know its a static site
 uglyURLs = true
-# I don't need any metadata features
+# I don't need any metadata or taxonomy features
 disableKinds = ["taxonomy", "term"]
 
 [params]
@@ -29,3 +30,8 @@ noClasses = false
 style = ""
 tabWidth = ""
 
+
+[markup.tableOfContents]
+endLevel = 5
+ordered = false
+startLevel = 2
