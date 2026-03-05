@@ -8,7 +8,8 @@
       {{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}
     </updated>
     <author><name>{{ .Site.Params.author.name }}</name></author>
-    {{ range .Pages }}
+    {{ $pages := where .Pages "File.BaseFileName" "ne" "search" }}
+    {{ range $pages }}
     <entry>
       <title>{{ .Title }}</title>
       <link rel="alternate" type="text/html" href="{{ .Permalink }}"/>
