@@ -13,7 +13,8 @@
       <div class="topic">
         <h3>Latest</h3>
         <ul>
-          {{ range ( .Site.RegularPages | first 3) }}
+          {{ $pages := where .Pages "File.BaseFileName" "ne" "search" }}
+          {{ range ( $pages | first 3) }}
           <li>
             <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .WordCount }} words)
             {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
