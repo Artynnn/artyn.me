@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel=icon href=/output.png />
     <title>{{ .Title | safeHTML }}</title>
-    {{ $styles := resources.Get "vanilla.css" | minify }}
+    {{ $styles := resources.Get "style.css" | minify }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
   </head>
   <body class="home">

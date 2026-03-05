@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-    {{ $styles := resources.Get "vanilla.css" | minify }}
+    {{ $styles := resources.Get "style.css" | minify }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
     <title>{{ .Title }}</title>
   </head>
