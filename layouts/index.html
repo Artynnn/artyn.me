@@ -5,6 +5,7 @@
     <title>{{ .Title | safeHTML }}</title>
     {{ $styles := resources.Get "style.css" | minify }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+    <link rel=alternate title="Artyn" type=application/atom+xml href="/index.xml">
   </head>
   <body class="home">
     <p>My personal blog that I rarely update. <a href="/search.html">Search</a> for content and follow via <a href="/index.xml">RSS</a>.</p>
