@@ -35,3 +35,6 @@ tabWidth = ""
 endLevel = 5
 ordered = false
 startLevel = 2
+
+[outputs]
+  home = ['html', 'rss']
