@@ -1,27 +1,26 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{ .Site.Title }}</title>
-    <id>{{ .Site.BaseURL }}</id>
-    <link rel="alternate" href="{{ .Site.BaseURL }}"/>
-    <link href="{{ .Site.BaseURL }}index.xml" rel="self"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ .Site.Title }}</title>
+  <id>{{ .Site.BaseURL }}</id>
+  <link rel="alternate" href="{{ .Site.BaseURL }}"/>
+  <link href="{{ .Site.BaseURL }}index.xml" rel="self"/>
+  <updated>
+    {{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}
+  </updated>
+  <author><name>{{ .Site.Params.author.name }}</name></author>
+  {{ $pages := where .Pages "File.BaseFileName" "ne" "search" }}
+  {{ range $pages }}
+  <entry>
+    <title>{{ .Title }}</title>
+    <link rel="alternate" type="text/html" href="{{ .Permalink }}"/>
+    <id>{{ .Permalink }}</id>
+    <published>
+      {{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}
+    </published>
     <updated>
       {{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}
     </updated>
-    <author><name>{{ .Site.Params.author.name }}</name></author>
-    {{ $pages := where .Pages "File.BaseFileName" "ne" "search" }}
-    {{ range $pages }}
-    <entry>
-      <title>{{ .Title }}</title>
-      <link rel="alternate" type="text/html" href="{{ .Permalink }}"/>
-      <id>{{ .Permalink }}</id>
-      <published>
-        {{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}
-      </published>
-      <updated>
-        {{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}
-      </updated>
-      <content type="html">{{- .Content | html -}}</content>
-    </entry>
-    {{ end }}
-  </channel>
-</rss>
+    <content type="html">{{- .Content | html -}}</content>
+  </entry>
+  {{ end }}
+</feed>
