@@ -32,7 +32,8 @@
 :root {
     --pagefind-ui-font: 'Atkinson Hyperlegible Next';
     --pagefind-ui-border-width: 0px;
-    --main-bg-color: #aabaff;
+    /* --main-bg-color: #aabaff */
+    --main-bg-color: #efefeb;
     --main-fg-color: black;
     --pagefind-ui-text: var(--main-fg-color);
     --pagefind-ui-background: var(--main-bg-color);
