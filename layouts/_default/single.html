@@ -1,35 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{{ .Title | safeHTML }}</title>
-    {{ $styles := resources.Get "style.css" | minify }}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
-    <link rel=alternate title="Artyn" type=application/atom+xml href="/index.xml">
-  </head>
-  <body>
-    <article class="h-entry">
-        <h1 data-pagefind-meta="title" class="p-name">{{ .Title }}</h1>
-        <div class="article-metadata">
-	  <p>
-	    By
-	    <a class="p-author h-card" href="/">
-	      {{ .Site.Params.author.name }}
-	    </a>
-	  </p>
-	  <p>Last updated
-	    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-	    {{ $dateHuman := .Date | time.Format ":date_long" }}
-	    <span class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</span>
-	  </p>
-        </div>
-        {{ if .Params.long }}
-        {{ .TableOfContents }}
-        {{ end }}
-        <div data-pagefind-body class="e-content">
-	  {{ .Content }}
-        </div>
-
-    </article>
-  </body>
-</html>
+{{ define "main" }}
+<article class="h-entry">
+  <h1 data-pagefind-meta="title" class="p-name">{{ .Title }}</h1>
+  <div class="article-metadata">
+    <p>
+      By
+      <a class="p-author h-card">
+	{{ .Site.Params.author.name }}
+      </a>
+    </p>
+    <p>Last updated
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <span class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</span>
+    </p>
+  </div>
+  {{ if .Params.long }}
+  {{ .TableOfContents }}
+  {{ end }}
+  <div data-pagefind-body class="e-content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

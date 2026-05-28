@@ -1,97 +1,65 @@
-/* # Fonts */
+/* fonts */
 
 /* atkinson-hyperlegible-next-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Atkinson Hyperlegible Next';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/atkinson-hyperlegible-next-v7-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Atkinson Hyperlegible Next';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/atkinson-hyperlegible-next-v7-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* atkinson-hyperlegible-next-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Atkinson Hyperlegible Next';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/fonts/atkinson-hyperlegible-next-v7-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Atkinson Hyperlegible Next';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/atkinson-hyperlegible-next-v7-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* atkinson-hyperlegible-mono-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Atkinson Hyperlegible Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/atkinson-hyperlegible-mono-v8-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Atkinson Hyperlegible Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/atkinson-hyperlegible-mono-v8-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-/* # Presentation */
+/* layout */
 
-:root {
-    --pagefind-ui-font: 'Atkinson Hyperlegible Next';
-    --pagefind-ui-border-width: 0px;
-    /* --main-bg-color: #aabaff */
-    --main-bg-color: #efefeb;
-    --main-fg-color: black;
-    --pagefind-ui-text: var(--main-fg-color);
-    --pagefind-ui-background: var(--main-bg-color);
+/* Desktop Layout */
+
+@media (min-width: 63em) {
+    .home {
+        margin: 0 auto;
+	max-width: 95ch;
+    }
+    #search {
+	max-width: 65ch;
+    }
+    figcaption {
+	float: right;
+	margin-right: -60%;
+	width: 50%;
+    }
+    .e-content {
+	max-width: 65ch;
+    }
+    header {
+	padding-top: 10px;
+    }
 }
 
-body {
-    font-family: 'Atkinson Hyperlegible Next', sans-serif;
-    background-color: var(--main-bg-color);
-    color: var(--main-fg-color);
-}
+/* fixing layout issues */
 
-h1 {
-    font-size: 2.027rem;
-}
-
-h2 {
-    font-size: 1.802rem;
-}
-
-h3 {
-    font-size: 1.602rem;
-}
-
-h4 {
-    font-size: 1.424rem;
-}
-
-h5 {
-    font-size: 1.266rem;
-}
-
-a:link, a:visited, a:hover, a:active {
-  color: var(--main-fg-color);
-  text-decoration: underline;
-}
-
-/* Get rid of the list looks on the index page. Looks bad. */
-.topic > ul {
-  padding: 0;
-  list-style: none;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-td, th {
-  border: 1px solid var(--main-fg-color);
-  padding: 0.5rem;
-  text-align: left;
-}
-
-/* For very large tables */
+/* capping very large tables */
 .scrollable {
     overflow-x: auto;
 }
 
-/* Capping the size of code */
+/* Capping the size of code blocks */
 pre {
     overflow-x: auto;
 }
@@ -102,13 +70,34 @@ img {
     height: auto;
 }
 
+/* appearance */
+
+:root {
+    --main-bg-color: #efefeb;
+    --main-fg-color: black;
+    --pagefind-ui-font: 'Atkinson Hyperlegible Next';
+    --pagefind-ui-border: #010101;
+    --pagefind-ui-background: beige;
+    --pagefind-outline-width: 1px;
+}
+
+body {
+    font-family: 'Atkinson Hyperlegible Next', sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--main-fg-color);
+}
+
 pre, code {
     font-family: 'Atkinson Hyperlegible Mono', monospace;
 }
 
-article, figure {
-    max-width: 65ch;
-    line-height: 1.4;
+hr {
+    color: black;
+}
+
+.topic > ul {
+    padding: 0;
+    list-style: none;
 }
 
 figcaption > h4 {
@@ -116,36 +105,12 @@ figcaption > h4 {
     font-size: 1em;
 }
 
-/* # Dark Mode */
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --main-bg-color: black;
-        --main-fg-color: #aabaff;
-    }
+table {
+    border-collapse: collapse;
 }
 
-/* # Mobile First */
-
-aside {
-     float: none;
-     margin-left: 40px;
-}
-
-/* # Desktop Layout */
-
-@media (min-width: 63em) {
-    .home, article {
-        padding-left: 12.5%;
-    }
-    aside {
-        float: right;
-        margin-right: -52%;
-        width: 50%;
-    }
-    figcaption {
-        float: right;
-        margin-right: -60%;
-        width: 50%;
-    }
+td, th {
+    border: 1px solid var(--main-fg-color);
+    padding: 0.5rem;
+    text-align: left;
 }

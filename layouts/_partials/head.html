@@ -1,0 +1,15 @@
+<head>
+  <meta charset="utf-8">
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  {{ if .IsHome }}
+  <meta name="description" content="My personal blog that I rarely update">
+  {{ else }}
+  <meta name="description" content="{{ .Params.description }}">
+  {{ end }}
+  <title>{{ .Title | safeHTML }}</title>
+  {{ $styles := resources.Get "style.css" | minify }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  {{ $favicon := resources.Get "favicon.png" }}
+  <link rel="icon" type="image/png" href="{{ $favicon.RelPermalink }}">
+</head>

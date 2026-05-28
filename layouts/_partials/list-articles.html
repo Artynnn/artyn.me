@@ -1,0 +1,29 @@
+<div class="subjects">
+  <div class="topic">
+    <h3>Latest</h3>
+    <ul>
+      {{ $pages := where .Pages "File.BaseFileName" "ne" "search" }}
+      {{ range ( $pages | first 3) }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .WordCount }} words)
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+	{{ $dateHuman := .Date | time.Format ":date_long" }}
+	<span class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</span>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ range where .Site.RegularPages "Params.topic" "!=" nil }}
+  <div class="topic">
+    <h3>{{ .Params.topic }}</h3>
+    <ul>
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .WordCount }} words)
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+	{{ $dateHuman := .Date | time.Format ":date_long" }}
+	<span class="dt-published" datetime="{{ $dateMachine }}">{{ $dateHuman }}</span>
+      </li>
+    </ul>
+  </div>
+  {{ end }}
+</div>

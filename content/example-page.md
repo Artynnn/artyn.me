@@ -2,11 +2,12 @@
 title = "Example page"
 author = ["Artyn"]
 date = 2026-02-25
-lastmod = 2026-02-27T06:44:16-06:00
+lastmod = 2026-05-27T22:53:31-05:00
 draft = false
 weight = 2001
 topic = "Hugo"
 long = "yes"
+description = "Test page for my blog built with Hugo."
 +++
 
 This is a page to test if my website's typography is generally good.
@@ -37,12 +38,6 @@ This is a image.
 
 So far everything is looking good. Now I want to see if my asides work nicely. Asides are a newish HTML tag that lets you specify additional information that would be a big break if it was included in the body.
 
-<aside>
-
-our new puppy
-
-</aside>
-
 I also want to try how adding a quotes looks.
 
 > Do not fall into the trap of anthropomorphizing Larry Ellison. You need to think of Larry Ellison the way you think of a lawnmower. You don’t anthropomorphize your lawnmower, the lawnmower just mows the lawn - you stick your hand in there and it’ll chop it off, the end. You don’t think "oh, the lawnmower hates me" – lawnmower doesn’t give a shit about you, lawnmower can’t hate you. Don’t anthropomorphize the lawnmower. Don’t fall into that trap about Oracle. - Bryan Cantrill
@@ -64,6 +59,7 @@ What else? Should I **add** and _maybe_ I should `code` and how about some more 
 | abc | def | ghi  | wow                                                          |
 
 </div>
+
 
 ## I am testing all of the headings {#i-am-testing-all-of-the-headings}
 

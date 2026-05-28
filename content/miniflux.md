@@ -1,18 +1,13 @@
-#+hugo_base_dir: ./
-#+hugo_section: ./
-#+author: Artyn
-#+hugo_weight: auto
-#+hugo_auto_set_lastmod: t
-
-* Self-hosted
-** Making Miniflux more usable
-:PROPERTIES:
-:EXPORT_FILE_NAME: miniflux
-:EXPORT_DATE: 2026-03-08
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :topic Self-hosting :description Making Miniflux the best RSS reader.
-:END:
-
-# https://pluralistic.net/2026/03/07/reader-mode/
++++
+title = "Making Miniflux more usable"
+author = ["Artyn"]
+date = 2026-03-08
+lastmod = 2026-05-27T22:55:49-05:00
+draft = false
+weight = 2001
+topic = "Self-hosting"
+description = "Making Miniflux the best RSS reader."
++++
 
 Miniflux was originally my least favorite RSS newsreader. But after learning you can inject arbitrary CSS and JS it is now my favorite. I think the default experience of Miniflux (and by extension most RSS readers) sucks and we can do better.
 
@@ -28,21 +23,23 @@ I also think there is too much extraneous information and that there is too much
 
 I also think you shouldn't look at any number. They are pointless. I don't care if a entry has 353 unread articles or just two.
 
-*** Change some defaults in the settings
 
-- remove "all" category. Whats the point?
+## Change some defaults in the settings {#change-some-defaults-in-the-settings}
 
-- make default home: ~categories~
+-   remove "all" category. Whats the point?
 
-- entry sorting: ~recent entries first~
+-   make default home: `categories`
 
-- entries per page: a big number like ~300~
+-   entry sorting: `recent entries first`
 
-*** Better design
+-   entries per page: a big number like `300`
+
+
+## Better design {#better-design}
 
 Get rid of numbers and make it more compact.
 
-#+begin_src css
+```css
 #page-header-title span {
   display: none;
 }
@@ -80,13 +77,14 @@ Get rid of numbers and make it more compact.
 .unread-counter-wrapper {
   display: none;
 }
-#+end_src
+```
 
-*** Better behavior
+
+## Better behavior {#better-behavior}
 
 Make the default open behavior contextual and more sensible.
 
-#+begin_src javascript
+```javascript
 if (document.getElementsByTagName("title")[0].innerHTML == 'Categories (3) - Miniflux') {
     let categoryTitles = document.getElementsByClassName("item-title");
     for (let i = 0; i < categoryTitles.length; i++) {
@@ -102,11 +100,11 @@ if (document.getElementsByTagName("title")[0].innerHTML == 'Categories (3) - Min
         }
     }
 }
-#+end_src
+```
 
 Add a button that is useful for marking as read for mobile devices. This code is ugly and I need to make it nicer.
 
-#+begin_src javascript
+```javascript
 // button
 function Marky() {
     const markButtons = Array.from(document.querySelectorAll('a, button'))
@@ -149,119 +147,11 @@ buttonz.addEventListener('click', Marky);
 
 // Add the button to the page (for example, inside <body>)
 document.body.appendChild(buttonz);
-#+end_src
+```
 
 I have not even actually touched trying to make any aesthetic UI changes. But Miniflux should make that easy compared to other readers.
 
-# I want to add this image
-# https://safebooru.org//samples/559/sample_f336f6bc7c0872b7582cfb3a297c6f3aa96fe6b3.jpg?6510283
 
-# const myImage = document.createElement('img');
-# myImage.src = 'https://safebooru.org//samples/559/sample_f336f6bc7c0872b7582cfb3a297c6f3aa96fe6b3.jpg?6510283'; // Path to your image file or a URL
-# document.body.appendChild(myImage);
-# myImage.style.height = "200px";
-# buttonz.style.fontSize = '16px';
-# buttonz.style.borderRadius = '8px';
+## Screenshot {#screenshot}
 
-*** Screenshot
-
-#+ATTR_HTML: :alt A screenshot of my improved Miniflux
-#+ATTR_HTML: :title Miniflux
-[[file:/img/miniflux.png]]
-
-** Free and open source games are awesome
-
-- I like how they are not predatory.
-- I like their longevity and community spirit.
-- Decompilations and rom hacks should be considered "open soruce" games as you can make modifications even if it is a legal grey area.
-- Modding can somewhat be considered an open source game.
-
-- DCSS
-- DoL, FC, SMVA, Twine games
-- Platinum Quest
-- Sudoku, Minesweeper
-
-** Obscure books I recommend
-
-Not that anything is wrong with that but its kinda annoying seeing blogs mention books they've read and it's everything you already know, that you probably seen at Barne's and Nobel ([[https://blog.fogus.me/2025/12/23/the-best-things-and-stuff-of-2025.html][Fogus]] is a notable exception).
-
-Some of these books are well known in the topical niches they occupy. But it is rare for the general public to know about these books.
-
-** the TL;DR of Supercollider
-* Web development
-** Example page 
-:PROPERTIES:
-:EXPORT_FILE_NAME: example-page
-:EXPORT_DATE: 2026-02-25
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :topic Hugo :long yes :description Test page for my blog built with Hugo.
-:END:
-
-This is a page to test if my website's typography is generally good.
-
-- So I make a list.
-
-- This is a another item.
-
-- This is another item.
-
-This is more text.
-
-1. Another list
-
-2. Only numbered
-
-Here is some code.
-
-#+begin_src css
-p {
-    color: blue;
-}
-#+end_src
-
-This is a image.
-
-#+ATTR_HTML: :alt a cute black and white puppy being cradled in my lap
-#+ATTR_HTML: :title our new puppy
-[[file:/img/chocobo-bridge.jpg]]
-
-So far everything is looking good. Now I want to see if my asides work nicely. Asides are a newish HTML tag that lets you specify additional information that would be a big break if it was included in the body. 
-
-I also want to try how adding a quotes looks.
-
-#+begin_quote
-Do not fall into the trap of anthropomorphizing Larry Ellison. You need to think of Larry Ellison the way you think of a lawnmower. You don’t anthropomorphize your lawnmower, the lawnmower just mows the lawn - you stick your hand in there and it’ll chop it off, the end. You don’t think "oh, the lawnmower hates me" – lawnmower doesn’t give a shit about you, lawnmower can’t hate you. Don’t anthropomorphize the lawnmower. Don’t fall into that trap about Oracle. - Bryan Cantrill
-#+end_quote
-
-Here is a link to a [[https://doc.sccode.org/Classes/Klang.html][cool SuperCollider function called Klang]]. Seems like the most compact way to do additive synthesis. 
-
-Here is a table! I never like using tables!
-
-| wow    | hello |
-|--------+-------|
-| punnet | wow   |
-
-What else? Should I *add* and /maybe/ I should ~code~ and how about some more =code=?.
-
-#+attr_html: :class scrollable
-| h1  | h4  | test | test I am really going to test the limits of org mode tables |
-|-----+-----+------+--------------------------------------------------------------|
-| abc | def | ghi  | wow                                                          |
-
-# Next I am going to link to [another page](@@hugo:{{< relref "nixos-wireguard.md" >}})@@
-
-*** I am testing all of the headings
-
-How far should I go?
-
-**** Another level of headings
-
-How far should I go?
-
-***** ANOTHER LEVEL OF HEADINGS
-
-This is the last I will go.
-
-****** You genuinely don't need it to be this deep
-
-*** Back to the topper levels
-
+{{< figure src="/img/miniflux.png" alt="A screenshot of my improved Miniflux" title="Miniflux" >}}

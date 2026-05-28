@@ -1,6 +1,6 @@
 baseURL = "https://artyn.me"
-languageCode = "en-us"
-title = "Artyn's blog"
+locale = "en-us"
+title = "Artyn"
 # I love seeing the file extension.
 # I want people to know its a static site
 uglyURLs = true
