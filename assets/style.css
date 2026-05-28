@@ -114,3 +114,17 @@ td, th {
     padding: 0.5rem;
     text-align: left;
 }
+
+/* Dark mode */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-bg-color: black;
+        --main-fg-color: #aabaff;
+	--pagefind-ui-text: var(--main-fg-color);
+	--pagefind-ui-background: var(--main-bg-color);
+    }
+    a {
+	color: var(--main-fg-color);
+    }
+}
