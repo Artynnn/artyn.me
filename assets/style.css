@@ -115,8 +115,7 @@ td, th {
     text-align: left;
 }
 
-/* Dark mode */
-
+/* dark mode support? */
 @media (prefers-color-scheme: dark) {
     :root {
         --main-bg-color: black;
