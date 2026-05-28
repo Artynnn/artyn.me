@@ -150,8 +150,3 @@ document.body.appendChild(buttonz);
 ```
 
 I have not even actually touched trying to make any aesthetic UI changes. But Miniflux should make that easy compared to other readers.
-
-
-## Screenshot {#screenshot}
-
-{{< figure src="/img/miniflux.png" alt="A screenshot of my improved Miniflux" title="Miniflux" >}}
